@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kalam', cursive;
+}
+
+// zmienne
+$first: #06070C;
+$second: #262626;
+$thrid: #46F0FF;
+$listElementBg: rgba(70, 240, 255, 0.027);
+$hoverButtonBg: rgb(48, 158, 168);
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.main {
+    @include flex();
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $first;
+    padding: 2vw;
+}
+
+.title {
+    color: $thrid;
+    margin-bottom: 1em;
+    font-size: 3em ;
+}
+
+.addBox {
+    @include flex();
+    justify-content: space-evenly;
+    width: 95vw;
+    height: 20vh;
+    margin-bottom: 5vw;
+    border-radius:  0 0 2vw 2vw;
+    border-bottom: 0.1rem solid $thrid;
+    border-left: 0.1rem solid $thrid;
+    border-right: 0.1rem solid $thrid;
+}
+
+.inputBox {
+    position: relative;
+    width: 30%;
+    height: 40%;
+    color: $thrid;
+}
+.input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: #000;
+    font-size: .8em;
+    font-weight: bold;
+    padding: 0 .5rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    z-index: 1;
+}
+
+.inputText {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    white-space: nowrap;
+    line-height: 1;
+    font-size: .8em;
+    font-weight: bold;
+    padding: 0 .5rem;
+    transition: .3s ;
+    pointer-events: none;
+}
+
+.inputLine {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: .1rem;
+    background-color: $thrid;
+    transition: .3s;
+    pointer-events: none;
+    
+}
+
+
+.input:focus ~ .inputLine,
+.input:valid ~ .inputLine {
+    height: 100%;
+}
+
+.input:focus ~ .inputText,
+.input:valid ~ .inputText {
+    top: -50%;
+}
+
+
+.button {
+    @include flex();
+    width: 20%;
+    height: 50%;
+    border-radius: .5rem;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: $thrid;
+    outline: none;
+    transition: 1s;
+}
+
+.addButton:hover, .addButton:focus {
+    background-color: $hoverButtonBg;
+}
+
+
+
+
+
+
+// lista
+
+.list {
+    @include flex();
+    flex-direction: column;
+    width: 95vw;
+    border-radius: 2vw 2vw 0 0;
+    border-left: 0.1rem solid $thrid;
+    border-right: 0.1rem solid $thrid;
+    border-top: 0.1rem solid $thrid;
+    padding: 2vw;
+}
+
+
+
+.list-element {
+    @include flex();
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 10vh;
+    border-bottom: .1rem solid $thrid;
+    background-color: $listElementBg;
+    padding: 0 .2em 0 .4em;
+}
+
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + .checkLabel {
+    position: relative;
+    height: 100%;
+    width: 6vh;
+    height: 6vh;
+    margin-right: .8em;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] + .checkLabel:before {
+    @include flex();
+    content: '';
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 6vh;
+    height: 6vh;
+    border-radius: .3em;
+    border: .15em solid $thrid;
+    font-weight: bold;
+    transition: 1s;
+}
+
+input[type="checkbox"]:checked + .checkLabel:before {
+    content: '\2714';
+    background-color: $thrid;
+    color: $first;
+}
+
+
+.wordBox {
+    @include flex();
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 85%;
+}
+
+
+.polishWord, .englishWord {
+    @include flex();
+    justify-content: flex-start;
+    color: $thrid;
+    height: 100%;
+    font-size: .8rem;
+    flex:1;
+}
+
+.deleteButton {
+    @include flex();
+    width: 7.5vh;
+    height: 7.5vh;
+    font-size: 1rem;
+    border-radius: .3em;
+}
+
+
+.style::-webkit-scrollbar {
+    width: 1em;
+    background-color: black;
+} 
+
+.style::-webkit-scrollbar-thumb {
+    background-color: $thrid;	
+    border-radius: .5em;
+}
+
+
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+@media (min-width: 1024px) {
+    html {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 1366px) {
+    html {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 1500px) {
+    html {
+        font-size: 1.4rem;
+    }
+
+    .addBox {
+        width: 60vw;
+        height: 20vh;
+    }
+
+    .list {
+        width: 60vw;
+    }
+
+    .list-element {
+        width: 100%;
+        height: 7vh;
+    }
+
+    .deleteButton {
+        width: 5vh;
+        height: 5vh;
+    }
+
+    input[type="checkbox"] + .checkLabel:before {
+        width: 4.5vh;
+        height: 4.5vh;
+    }
+
+    input[type="checkbox"] + .checkLabel {
+        width: 4.5vh;
+        height: 4.5vh;
+    }
+}
+
+@media (orientation:portrait) {
+    .wordBox {
+        flex-direction: column;
+    }
+    .addBox {
+        min-height: 40vh;
+        flex-direction: column;
+    }
+
+    .list-element {
+        min-height: 9vh;
+    }
+    .inputBox {
+        width: 80%;
+        height: 1.8em;
+
+    }
+    .button {
+        width: 80%;
+        height: 2em;
+    }
+    .deleteButton {
+        width: 7vw;
+        height: 7vw;
+    }
+    input[type="checkbox"] + .checkLabel {
+        width: 5.5vw;
+        height: 5.5vw;
+        margin-right: 0
+    }
+    input[type="checkbox"] + .checkLabel:before {
+        width: 5.5vw;
+        height: 5.5vw;
+    }
+}
+@media (min-width:375px) and (orientation:portrait) {
+    html {
+        font-size: 1.3rem;
+    }
+}
+@media (min-width:768px) and (orientation:portrait) {
+    html {
+        font-size: 1.8rem;
+    }
+}
+@media (min-width:1024px) and (orientation:portrait) {
+    html {
+        font-size: 2.2rem;
+    }
+}
