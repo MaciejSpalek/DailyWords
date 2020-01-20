@@ -53,7 +53,7 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 95vw;
-  height: 20vh;
+  height: 5em;
   margin-bottom: 5vw;
   border-radius: 0 0 2vw 2vw;
   border-bottom: 0.1rem solid #46F0FF;
@@ -141,6 +141,7 @@ body {
   outline: none;
   -webkit-transition: 1s;
   transition: 1s;
+  cursor: pointer;
 }
 
 .addButton:hover, .addButton:focus {
@@ -162,11 +163,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 95vw;
+  min-height: 10em;
   border-radius: 2vw 2vw 0 0;
   border-left: 0.1rem solid #46F0FF;
   border-right: 0.1rem solid #46F0FF;
   border-top: 0.1rem solid #46F0FF;
-  padding: 2vw;
+  padding: 1em;
 }
 
 .list-element {
@@ -184,7 +186,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  min-height: 10vh;
+  min-height: 3em;
   border-bottom: 0.1rem solid #46F0FF;
   background-color: rgba(70, 240, 255, 0.027);
   padding: 0 .2em 0 .4em;
@@ -197,9 +199,8 @@ input[type="checkbox"] {
 input[type="checkbox"] + .checkLabel {
   position: relative;
   height: 100%;
-  width: 6vh;
-  height: 6vh;
-  margin-right: .8em;
+  width: 2em;
+  height: 2em;
   cursor: pointer;
 }
 
@@ -219,8 +220,8 @@ input[type="checkbox"] + .checkLabel:before {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 6vh;
-  height: 6vh;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: .3em;
   border: 0.15em solid #46F0FF;
   font-weight: bold;
@@ -249,7 +250,7 @@ input[type="checkbox"]:checked + .checkLabel:before {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 85%;
+  width: 100%;
 }
 
 .polishWord, .englishWord {
@@ -262,12 +263,10 @@ input[type="checkbox"]:checked + .checkLabel:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   color: #46F0FF;
   height: 100%;
-  font-size: .8rem;
+  font-size: 1em;
+  margin: 0 .8em;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -283,10 +282,11 @@ input[type="checkbox"]:checked + .checkLabel:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 7.5vh;
-  height: 7.5vh;
+  width: 2em;
+  height: 1.8em;
   font-size: 1rem;
   border-radius: .3em;
+  cursor: pointer;
 }
 
 .style::-webkit-scrollbar {
@@ -305,102 +305,12 @@ input[type="checkbox"]:checked + .checkLabel:before {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   html {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
-}
-
-@media (min-width: 1366px) {
-  html {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 1500px) {
-  html {
-    font-size: 1.4rem;
-  }
-  .addBox {
-    width: 60vw;
-    height: 20vh;
-  }
-  .list {
-    width: 60vw;
-  }
-  .list-element {
-    width: 100%;
-    height: 7vh;
-  }
-  .deleteButton {
-    width: 5vh;
-    height: 5vh;
-  }
-  input[type="checkbox"] + .checkLabel:before {
-    width: 4.5vh;
-    height: 4.5vh;
-  }
-  input[type="checkbox"] + .checkLabel {
-    width: 4.5vh;
-    height: 4.5vh;
-  }
-}
-
-@media (orientation: portrait) {
-  .wordBox {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .addBox {
-    min-height: 40vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .list-element {
-    min-height: 9vh;
-  }
-  .inputBox {
-    width: 80%;
-    height: 1.8em;
-  }
-  .button {
-    width: 80%;
-    height: 2em;
-  }
-  .deleteButton {
-    width: 7vw;
-    height: 7vw;
-  }
-  input[type="checkbox"] + .checkLabel {
-    width: 5.5vw;
-    height: 5.5vw;
-    margin-right: 0;
-  }
-  input[type="checkbox"] + .checkLabel:before {
-    width: 5.5vw;
-    height: 5.5vw;
-  }
-}
-
-@media (min-width: 375px) and (orientation: portrait) {
-  html {
-    font-size: 1.3rem;
-  }
-}
-
-@media (min-width: 768px) and (orientation: portrait) {
-  html {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 1024px) and (orientation: portrait) {
-  html {
-    font-size: 2.2rem;
+  .list, .addBox {
+    width: 1200px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -81,12 +81,12 @@ function createListElement() {
         saveCheckState();
         idCounter++;
         saveCounter();
-    } else {
-        console.log('Wprowadź dane')
     }
 }
 function clickButton() {
-    $($button).click(() => {
+    $($button).click(e => {
+        e.preventDefault();
+        $('.addBox').attr('novalidate', 'novalidate');
         createListElement();
         clearInput($firstInput);
         clearInput($secondInput);
