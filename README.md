@@ -1,4 +1,4 @@
-# ColorGame
+# DailyWords
 
 ![Main screen](img/DailyWordsView.png)
 
