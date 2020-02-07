@@ -1,0 +1,23 @@
+{
+  "name": "dailywords",
+  "version": "1.0.0",
+  "description": "![Main screen](img/DailyWordsView.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaciejSpalek/DailyWords.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaciejSpalek/DailyWords/issues"
+  },
+  "homepage": "https://github.com/MaciejSpalek/DailyWords#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
